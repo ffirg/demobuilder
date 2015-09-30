@@ -15,6 +15,9 @@ sudo dnf -y install git libcdio libguestfs libvirt pigz pyOpenSSL \
 sudo dnf -y update
 
 # Ensure required services are started
+# If you get an "Access denied" error then run sudo systemctl daemon-reexec
+# https://major.io/2015/09/18/systemd-in-fedora-22-failed-to-restart-service-access-denied/
+
 sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 
